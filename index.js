@@ -43,7 +43,7 @@ function setupListener(todo) {
   todo.addEventListener('click', e => {
     const classes = e.target.classList;
 
-    // Toggle checkmark and text strikethrough
+    // Toggle check mark and text strike-through
     if (classes.contains('complete-btn')) {
       todo.classList.toggle('completed');
       e.target.classList.toggle('fa-circle-o');
@@ -57,29 +57,32 @@ function setupListener(todo) {
   });
 }
 
-// Show all todos
-$('#all').addEventListener('click', e => {
-  $('.todo-item').forEach(todo => {
-    todo.classList.remove('is-hidden');
+// Logic to show each view
+$('.views').addEventListener('click', e => {
+  // Highlight the selected view button
+  $('.views button').forEach(view => {
+    view.classList.remove('selected');
   });
-});
+  e.target.classList.add('selected');
 
-// Show only completed todos
-$('#complete').addEventListener('click', e => {
   $('.todo-item').forEach(todo => {
-    todo.classList.add('is-hidden');
-    if (todo.classList.contains('completed')) {
+    // Show all todos
+    if (e.target.id === 'all') {
       todo.classList.remove('is-hidden');
     }
-  });
-});
-
-// Show only incomplete todos
-$('#incomplete').addEventListener('click', e => {
-  $('.todo-item').forEach(todo => {
-    todo.classList.remove('is-hidden');
-    if (todo.classList.contains('completed')) {
+    // Show only completed todos
+    if (e.target.id === 'complete') {
       todo.classList.add('is-hidden');
+      if (todo.classList.contains('completed')) {
+        todo.classList.remove('is-hidden');
+      }
+    }
+    // Show only incomplete todos
+    if (e.target.id === 'incomplete') {
+      todo.classList.remove('is-hidden');
+      if (todo.classList.contains('completed')) {
+        todo.classList.add('is-hidden');
+      }
     }
   });
 });
