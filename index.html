@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css" integrity="sha256-v5YlJGWVLS5hQ+o48fBzCKHEP2vMNsku57x3CosYykc="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="box todo-app">
+      <div>
+        <div class="views">
+          <button id="all" class="button is-primary">All</button>
+          <button id="complete" class="button is-link">Complete</button>
+          <button id="incomplete" class="button is-info">Incomplete</button>
+        </div>
+
+        <div class="">
+          <ul id="todos">
+            <li class="todo-item">
+              <div>
+                <span class="icon ">
+                  <i class="fa fa-circle-o complete-btn"></i>
+                </span>
+                <span class="todo-text">Get Groceries</span>
+              </div>
+              <span class="icon ">
+                <i class="fa fa-trash-o remove-todo"></i>
+              </span>
+            </li>
+            <li class="todo-item">
+              <div>
+                <span class="icon ">
+                  <i class="fa fa-circle-o complete-btn"></i>
+                </span>
+                <span class="todo-text">Visit Store</span>
+              </div>
+              <span class="icon ">
+                <i class="fa fa-trash-o remove-todo"></i>
+              </span>
+            </li>
+            <li class="todo-item completed">
+              <div>
+                <span class="icon ">
+                  <i class="fa fa-check-circle-o complete-btn"></i>
+                </span>
+                <span class="todo-text">Eat Apple</span>
+              </div>
+              <span class="icon ">
+                <i class="fa fa-trash-o remove-todo"></i>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <input id="todo-input" type="text" class="input" placeholder="Enter todo">
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
